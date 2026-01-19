@@ -20,7 +20,172 @@ body {
     min-height: 100vh;
 }
 
-/* Section styling */
+/* Repair Types Section */
+.repair-types {
+    width: 100%;
+    background: #292D32;
+    padding: 100px 0 100px 0;
+    position: relative;
+    /* margin-top: -60px;  Overlap if needed, but wrapper handles it */
+}
+
+.repair-types__header {
+    margin-bottom: 74px;
+    width: 100%;
+}
+
+.repair-types__title {
+    font-family: Haval;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: rgba(255, 253, 249, 1);
+    text-align: left;
+    margin: 0;
+}
+
+.repair-types__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+/* Repair Card */
+.repair-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #45484A;
+    min-height: 520px;
+    
+    /* Exact copy from project-card */
+    box-shadow: 0px 399px 112px 0px rgba(0, 0, 0, 0),0px 255px 102px 0px rgba(0, 0, 0, 0.01),0px 144px 86px 0px rgba(0, 0, 0, 0.05),0px 64px 64px 0px rgba(0, 0, 0, 0.09),0px 16px 35px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(153, 153, 153, 0.3),rgba(51, 51, 51, 0.45),rgba(0, 0, 0, 1),rgba(255, 255, 255, 0.08);
+}
+
+.repair-card:hover {
+    transform: translateY(-5px);
+}
+
+.repair-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.repair-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.repair-card:hover .repair-card__image {
+    transform: scale(1.05);
+}
+
+.repair-card__overlay-gradient {
+    /* Removed as project-card doesn't have this overlay */
+    display: none;
+}
+
+.repair-card__content {
+    padding: 30px 18px 50px 18px;
+    color: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0; /* Reset gap to match project-card flow */
+}
+
+.repair-card__title {
+    margin: 0 0 20px 0;
+    color: rgba(255, 255, 255, 1);
+    font-family: Haval;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 110%;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.repair-card__desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-style: Regular;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0;
+}
+
+.repair-card__subdesc {
+    /* Kept for extra content but styled similarly to desc */
+    font-family: Involve;
+    font-style: Regular;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.repair-types__footer {
+    width: 100%;
+    text-align: left;
+}
+
+.repair-types__note {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-style: Regular;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    .repair-types__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .repair-card {
+        min-height: 600px; /* Smaller height on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .repair-types__grid {
+        grid-template-columns: 1fr;
+    }
+    .repair-types__title {
+        font-size: 32px;
+    }
+    .repair-card {
+        min-height: 500px;
+    }
+    .repair-card__title {
+        font-size: 28px;
+    }
+    .repair-card__desc,
+    .repair-card__subdesc {
+        font-size: 18px;
+    }
+}
+
 .projects {
     width: 100%;
     /* As per design spec */
@@ -834,8 +999,8 @@ text-align: left;
 .calculator__btn {
     width: 100%;
     height: 70px;
-    font-size: 18px;
-    font-weight: 600; /* Bold button text */
+
+
     border-radius: 35px;
     background-color: #6d0a12;
     color: #fff;
@@ -844,6 +1009,14 @@ text-align: left;
     border: none;
     transition: all 0.3s ease;
     margin-top: 53px; /* 30px gap + 53px margin = 83px */
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    font-family: Involve;
+    font-style: Regular;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0%;
     text-align: center;
 }
 
