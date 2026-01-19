@@ -158,6 +158,363 @@ body {
     text-align: left;
 }
 
+/* Prices Section */
+.prices {
+    width: 100%;
+    padding: 100px 0;
+    color: #fff;
+    /* Dark background from Pixso */
+    background-color: #2C3035; 
+}
+
+.prices__header {
+    margin-bottom: 60px;
+}
+
+.prices__title {
+    font-family: Haval;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: rgba(255, 253, 249, 1);
+    margin: 0 0 24px 0;
+}
+
+.prices__table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Scroll on mobile */
+    margin-bottom: 60px;
+    padding-bottom: 20px; /* Space for scrollbar */
+}
+
+.prices__table {
+    display: grid;
+    /* Columns: Пакет, Описание, Ориентир, Для каких домов, Пример бюджета */
+    grid-template-columns: 150px 1.8fr 1fr 1.8fr 1fr; 
+    width: 100%;
+    min-width: 1000px;
+    gap: 0;
+    background-color: #2C3035;
+    border-radius: 30px; /* Full rounded corners */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Solid border around */
+}
+
+.prices__row {
+    display: contents;
+}
+
+/* Standard column styles */
+.prices__col {
+    padding: 30px 20px;
+    font-family: Involve;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+    color: rgba(255, 255, 255, 0.8);
+    /* Removed border-bottom from here to control width on row level */
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Horizontal lines with gaps between BODY rows */
+.prices__row {
+    display: contents;
+    position: relative; 
+}
+
+/* Text Styles matching Pixso 873:4318 */
+.prices__col {
+    padding: 30px 20px;
+    font-family: Involve;
+    font-size: 20px;
+    font-weight: 400; /* Regular for body */
+    line-height: 27px; /* Exact from Pixso 873:4337 */
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 1); /* White body text - exact from Pixso */
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Header Styles - Exact Pixso Match (873:4376) */
+.prices__row--head .prices__col {
+    color: rgba(255, 255, 255, 0.6); /* Exact from Pixso */
+    font-size: 24px; /* Exact from Pixso */
+    font-weight: 600; /* SemiBold from Pixso */
+    font-family: Involve;
+    letter-spacing: 0;
+    padding: 24px 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
+    border-right: none;
+    position: relative;
+    line-height: 120%;
+}
+
+/* Header Separator Lines */
+.prices__row--head .prices__col::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: calc(100% - 24px); /* 12px top/bottom gap */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.prices__row--head .prices__col:last-child::after {
+    display: none;
+}
+
+/* Service Column (Body) */
+.prices__col--service {
+    font-family: Involve;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+}
+
+/* Header Service Column override */
+.prices__row--head .prices__col--service {
+    font-family: Involve; 
+    font-size: 22px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Divider element styling (needs HTML update) */
+.prices__row-divider {
+    grid-column: 1 / -1; /* Span full width */
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 24px; /* The requested gap! */
+}
+/* Remove divider for last element? handled in HTML or CSS last-of-type */
+.prices__row-divider:last-child {
+    display: none;
+}
+
+.prices__row--head .prices__col:last-child {
+    border-right: none;
+}
+
+.prices__col--price,
+.prices__col--budget {
+    font-weight: 600;
+    white-space: nowrap;
+}
+.prices__col span {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    display: block;
+}
+
+.prices__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.prices__note {
+    font-family: Involve;
+    font-size: 18px;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 900px;
+    margin: 0;
+}
+
+.prices__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 70px;
+    padding: 0 50px;
+    border-radius: 35px;
+    background-color: #6d0a12;
+    color: #fff;
+    font-family: Involve;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+.prices__btn:hover {
+    background-color: #8a0d17;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 1024px) {
+    .prices__table-wrapper {
+        width: 100%;
+        overflow: hidden; /* Prevent horizontal scroll causing page wideness, allow internal content to flow */
+        padding: 0 1px; /* Avoid border clipping */
+    }
+
+    .prices__table {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        min-width: 0 !important; /* Force override of desktop 1000px */
+        background: transparent;
+        border: none;
+        border-radius: 0;
+    }
+
+    /* Hide Table Header */
+    .prices__row--head,
+    .prices__row-divider {
+        display: none;
+    }
+
+    /* Professional Card Layout with Grid */
+    .prices__row {
+        display: grid;
+        width: 100%;
+        box-sizing: border-box; 
+        grid-template-areas: 
+            "service price"
+            "desc desc"
+            "target target"
+            "budget budget";
+        grid-template-columns: 1fr auto; 
+        gap: 16px;
+        background-color: #2C3035;
+        border-radius: 20px;
+        /* Improved Border: slightly lighter to define the card shape */
+        border: 1px solid rgba(255, 255, 255, 0.15); 
+        padding: 20px; 
+        position: relative;
+    }
+
+    /* General Column Reset */
+    .prices__col {
+        padding: 0;
+        border-bottom: none; 
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* Assign Grid Areas */
+    .prices__col--service { grid-area: service; }
+    .prices__col--desc    { grid-area: desc; }
+    .prices__col--price   { grid-area: price; }
+    .prices__col--target  { grid-area: target; }
+    .prices__col--budget  { grid-area: budget; }
+
+    /* 1. Service Title (Top Left) */
+    .prices__col--service {
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 120%;
+    }
+    .prices__col--service::before { display: none; } 
+
+    /* 2. Price (Top Right - Highlighted) */
+    .prices__col--price {
+        align-items: flex-end; 
+        text-align: right;
+        background: rgba(255, 255, 255, 0.05);
+        /* Add border to price badge for better definition */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 8px 12px;
+        border-radius: 12px;
+        height: fit-content;
+    }
+    .prices__col--price::before {
+        content: "Цена"; 
+        font-size: 12px;
+        color: rgba(255,255,255,0.4);
+        margin-bottom: 2px;
+        margin-right: 0;
+    }
+    .prices__col--price {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    /* 3. Description (Full Width) */
+    .prices__col--desc {
+        /* Subtle separator line */
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding-top: 16px;
+        font-size: 16px;
+        line-height: 150%;
+        color: rgba(255,255,255,0.8);
+    }
+    .prices__col--desc::before {
+        display: none; 
+    }
+
+    /* 4 & 5. Target and Budget (Standard with Labels) */
+    .prices__col--target, 
+    .prices__col--budget {
+        background: rgba(255, 255, 255, 0.03);
+        /* Subtle border for these blocks/pills */
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    /* Shared Label Style for Target/Budget */
+    .prices__col--target::before,
+    .prices__col--budget::before {
+        content: attr(data-label);
+        font-family: Involve;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 13px;
+        margin-bottom: 6px;
+        display: block;
+        margin-right: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Mobile Phone Adjustment */
+    .prices__row {
+        grid-template-areas: 
+            "service"
+            "price"
+            "desc"
+            "target"
+            "budget";
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .prices__col--price {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .prices__title {
+        font-size: 32px;
+    }
+    .prices__btn {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
 @media (max-width: 1024px) {
     .repair-types__grid {
         grid-template-columns: repeat(2, 1fr);
