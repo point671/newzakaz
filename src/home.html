@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+		    <section class="projects">
+            <div class="projects__container">
+            <div class="projects__header">
+                <h1 class="projects__title">Ремонт коттеджей и частных домов в Москве и МО</h1>
+                <p class="projects__subtitle">Ремонтируем любые коттеджи и дома под ключ</p>
+                <p class="projects__description">
+                    Мы выполняем ремонт коттеджей, загородных и частных домов под ключ: внутреннюю и внешнюю отделку,
+                    инженерные системы, фасады и кровлю. Работаем по Москве и всей Московской области, в том числе по
+                    таунхаусам и домам в коттеджных посёлках.
+                </p>
+            </div>
+
+            <div class="projects__grid">
+                <!-- Card 1 -->
+                <article class="project-card">
+                    <div class="project-card__image-wrapper">
+                        <img class="project-card__image" src="@img/Main-two-block/Коттеджи.webp"
+                            alt="Коттеджи и загородные дома">
+                        <div class="project-card__badge">
+                            <span class="project-card__badge-icon">
+                                <img src="@img/Main-two-block/Symbol.svg" alt="icon"
+                                    style="width: 24px; height: 24px;">
+                            </span>
+                            <span class="project-card__badge-text">от 80<br>до 600 м²</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Коттеджи <br>и загородные <br>дома</h3>
+                        <p class="project-card__desc">Каменные, монолитные, газобетонные, каркасные коттеджи</p>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="project-card">
+                    <div class="project-card__image-wrapper">
+                        <img class="project-card__image" src="@img/Main-two-block/частные_дома.webp"
+                            alt="Частные дома в Москве">
+                        <div class="project-card__badge">
+                            <span class="project-card__badge-icon">
+                                <img src="@img/Main-two-block/Symbol2.svg" alt="icon"
+                                    style="width: 24px; height: 24px;">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Частные дома <br>в Москве</h3>
+                        <p class="project-card__desc">Дома и таунхаусы в черте города, старый фонд и современные поселки
+                            городского типа</p>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="project-card">
+                    <div class="project-card__image-wrapper">
+                        <img class="project-card__image" src="@img/Main-two-block/деревянные_дома.webp"
+                            alt="Деревянные дома и срубы">
+                        <div class="project-card__badge">
+                            <span class="project-card__badge-icon">
+                                <img src="@img/Main-two-block/Symbol3.svg" alt="icon"
+                                    style="width: 24px; height: 24px;">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Деревянные <br>дома и срубы</h3>
+                        <p class="project-card__desc">Брусовые, каркасные, дома из бревна. Полный комплекс ремонта и
+                            отделки, включая защиту древесины</p>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="project-card">
+                    <div class="project-card__image-wrapper">
+                        <img class="project-card__image" src="@img/Main-two-block/Дома_с_Историей.webp"
+                            alt="Дома после строительства">
+                        <div class="project-card__badge">
+                            <span class="project-card__badge-icon">
+                                <img src="@img/Main-two-block/Symbol4.svg" alt="icon"
+                                    style="width: 24px; height: 24px;">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Дома после <br>строительства<br>и с историей</h3>
+                        <p class="project-card__desc">Ремонт «с нуля» в новом коттедже и обновление домов с действующими
+                            коммуникациями и отделкой</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="projects__footer">
+                <p class="projects__footer-text">Работаем там, где вам удобно</p>
+                <p class="projects__locations">
+                    Выезжаем по всей Москве и Московской области: Новая Рига, Рублёво-Успенское, Киевское, Минское,
+                    Новорижское, Ярославское, Дмитровское и другие направления.
+                </p>
+                <p class="projects__note">Сметчик приезжает на объект бесплатно.</p>
+                <button class="btn btn--primary">Получить расчёт ремонта коттеджа</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <div class="calculator-wrapper">
+        <section class="calculator">
+            <div class="calculator__container">
+                <div class="calculator__header">
+                    <h2 class="calculator__title">Онлайн-калькулятор<br>ремонта коттеджа в Москве<br>и области</h2>
+                    <div class="calculator__description">
+                        <p>Узнайте ориентировочную стоимость ремонта коттеджа или частного дома в Москве и Московской
+                            области за 1 минуту. Калькулятор считает цену по среднерыночным ставкам за м² в 2025 году. Для
+                            точной сметы инженер приедет на объект, выполнит обмеры и учтёт особенности дома.</p>
+                    </div>
+                </div>
+
+                <div class="calculator__form-wrapper">
+                    <form class="calculator__form" id="calculatorForm">
+                        <div class="calculator__body">
+                            <!-- Left Column -->
+                            <div class="calculator__column">
+                                <div class="calculator__input-group">
+                                    <input type="number" id="area" class="calculator__input" placeholder=" " min="0">
+                                    <label for="area" class="calculator__label">Площадь дома, м²</label>
+                                </div>
+                                
+                                <div class="calculator__input-group calculator__select-wrapper">
+                                    <select id="repairType" class="calculator__select">
+                                        <option value="" disabled selected>Тип ремонта</option>
+                                        <option value="cosmetic">Косметический</option>
+                                        <option value="capital">Капитальный</option>
+                                        <option value="premium">Премиум</option>
+                                    </select>
+                                    <svg class="calculator__select-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L7 7L13 1" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+
+                                <button type="button" class="btn btn--primary calculator__btn">Рассчитать стоимость</button>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="calculator__column">
+                                <div class="calculator__input-group calculator__select-wrapper">
+                                    <select id="objectType" class="calculator__select">
+                                        <option value="" disabled selected>Тип объекта</option>
+                                        <option value="cottage">Коттедж</option>
+                                        <option value="townhouse">Таунхаус</option>
+                                        <option value="wood">Деревянный дом</option>
+                                    </select>
+                                    <svg class="calculator__select-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L7 7L13 1" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+
+                                <div class="calculator__options">
+                                    <div class="calculator__options-title">Опции:</div>
+                                    <div class="calculator__checkboxes">
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="facade">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-text">Ремонт фасада</span>
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="roof">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-text">Ремонт кровли</span>
+                                        </label>
+                                        <label class="custom-checkbox full-width">
+                                            <input type="checkbox" name="engineering">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-text">Монтаж/замена инженерных систем</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

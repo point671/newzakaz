@@ -1,0 +1,896 @@
+/* Fonts Setup */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --container-width: 1180px;
+    --primary-color: #6d0a12;
+    /* Dark red from button */
+    --text-color: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --font-main: 'Montserrat', sans-serif;
+    --card-radius: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: #f5f5f5;
+    /* Light bg to separate section */
+    min-height: 100vh;
+}
+
+/* Section styling */
+.projects {
+    width: 100%;
+    /* As per design spec */
+    background:#494C51;
+    /* Dark background as implied by white text */
+    padding: 148px 0 100px 0;
+    /* Updated: 148px top padding from Pixso */
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Container */
+/* Container */
+.projects__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Title */
+.projects__title {
+    margin-bottom: 74px;
+    color: rgba(255, 253, 249, 1);
+    font-family: 'Haval', sans-serif;
+    font-style: normal; /* Fixed: 'Light' is not a valid font-style */
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.projects__subtitle {
+    margin: 0 0 48px 0;
+    color: rgba(255, 255, 255, 1);
+    font-family: Haval;
+    font-style: Light;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+    letter-spacing: 0px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/* Footer & Grid adjustment */
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 76px;
+    /* Updated from 60px */
+}
+
+.projects__description {
+    margin: 0 0 48px 0;
+color: rgba(255, 255, 255, 0.6);
+font-family: Involve;
+font-style: SemiBold Oblique;
+font-size: 24px;
+font-weight: 400;
+line-height: 29px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+.projects__footer-text {
+
+    color: rgba(255, 255, 255, 1);
+    font-family: Haval;
+
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+    letter-spacing: 0px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.projects__locations {
+    margin: 0 0 50px 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-style: SemiBold Oblique;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.projects__note {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-style: SemiBold Oblique;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin: 0 0 50px 0;
+    /* Increased to match flow */
+}
+
+
+.projects {
+    background-color: #494C51;
+   
+}
+
+
+/* Grid layout */
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 76px;
+    /* Updated from 60px */
+}
+
+/* ... media queries unchanged ... */
+
+/* Footer & Button */
+/* New header description */
+.projects__description {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: left;
+    max-width: 1180px;
+    line-height: 1.5;
+    margin: 0 0 48px 0;
+    /* Updated from 60px */
+}
+
+/* Footer elements */
+.projects__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects__footer-text {
+    font-size: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 50px 0;
+    /* Updated from 30px */
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.projects__locations {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 1180px;
+    margin: 0 0 50px 0;
+    /* Updated margin */
+    line-height: 1.4;
+}
+
+.projects__note {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 0 0 50px 0;
+    /* Updated margin */
+}
+
+@media (max-width: 1024px) {
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+    .projects__title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .projects__subtitle,
+    .projects__footer-text {
+        font-size: 24px;
+    }
+}
+
+/* Card Styling */
+.project-card {
+    position: relative;
+    border-radius: 30px;
+    /* Visually smaller than 60px but large enough */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #45484A;
+    /* Dark gray background */
+    min-height: 520px;
+    /* Ensure sufficient height */
+
+
+    box-shadow: 0px 399px 112px 0px rgba(0, 0, 0, 0),0px 255px 102px 0px rgba(0, 0, 0, 0.01),0px 144px 86px 0px rgba(0, 0, 0, 0.05),0px 64px 64px 0px rgba(0, 0, 0, 0.09),0px 16px 35px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(153, 153, 153, 0.3),rgba(51, 51, 51, 0.45),rgba(0, 0, 0, 1),rgba(255, 255, 255, 0.08);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    /* Fixed height for image part */
+    overflow: hidden;
+}
+
+.project-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+
+
+.project-card:hover .project-card__image {
+    transform: scale(1.05);
+}
+
+.project-card__content {
+    padding: 30px 18px 50px 18px;
+    /* Corrected: 30px top, 18px horizontal, 50px bottom */
+    /* Spacious padding */
+    color: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* Explicitly set left alignment */
+}
+
+/* Badge/Icon circle */
+/* Badge/Icon circle */
+.project-card__badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 8px;
+    /* Initially just padding for icon */
+    border-radius: 50px;
+    /* Pill shape */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    max-width: 54px;
+    /* Width of icon (36) + padding (8*2) + border ~ 54 */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.project-card:hover .project-card__badge {
+    max-width: 300px;
+    /* Expand to fit text */
+    padding-right: 20px;
+    /* Add padding for text */
+}
+
+.project-card__badge-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Inner circle border */
+    flex-shrink: 0;
+    /* Prevent icon shrinking */
+}
+
+.project-card__badge-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.project-card__badge-text {
+    font-size: 16px;
+    /* Corrected from 14px */
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+    text-align: left;
+    opacity: 0;
+    margin-left: 0;
+    transition: all 0.3s ease;
+    transform: translateX(10px);
+}
+
+.project-card:hover .project-card__badge-text {
+    opacity: 1;
+    margin-left: 12px;
+    transform: translateX(0);
+}
+
+.project-card__title {
+    margin: 0 0 20px 0;
+    color: rgba(255, 255, 255, 1);
+font-family: Haval;
+
+font-size: 24px;
+font-weight: 300;
+line-height: 110%;
+letter-spacing: 0px;
+text-align: left;
+    
+}
+
+.project-card__desc {
+color: rgba(255, 255, 255, 0.6);
+font-family: Involve;
+font-style: Regular;
+font-size: 24px;
+font-weight: 400;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: left;
+}
+
+.project-card__overlay {
+    display: none;
+    /* Remove old overlay */
+}
+
+/* Footer & Button */
+/* New header description */
+.projects__description {
+    font-size: 24px;
+    /* Corrected from 16px */
+    font-weight: 600;
+    /* SemiBold */
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: left;
+    max-width: 1180px;
+    /* Increased width to fit larger text if needed */
+    line-height: 1.5;
+    margin: 0 0 50px 0;
+}
+
+/* Footer elements */
+.projects__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects__footer-text {
+    color: #fff;
+    margin: 0 0 50px 0;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-family: Haval;
+    font-style: Light;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+.projects__locations {
+    font-size: 24px;
+    /* Corrected from 14px */
+    font-weight: 600;
+    /* SemiBold */
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 1180px;
+    margin: 0 0 30px 0;
+    line-height: 1.4;
+}
+
+.projects__note {
+    font-size: 24px;
+    /* Corrected from 14px */
+    font-weight: 600;
+    /* SemiBold */
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 0 0 30px 0;
+    line-height: 1.4;
+}
+
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-transform: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+font-family: Involve;
+font-style: Regular;
+font-size: 24px;
+font-weight: 400;
+line-height: 29px;
+letter-spacing: 0%;
+text-align: left;
+    
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-family: Involve;
+    font-style: Regular;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    text-align: left;
+    letter-spacing: 0%;
+}
+
+.btn--primary:hover {
+    background-color: #8a121b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(109, 10, 18, 0.5);
+}
+
+/* Calculator Section */
+/* Wrapper to show #292D32 behind the rounded corners */
+.calculator-wrapper {
+    background-color: #292D32;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    position: relative;
+    z-index: 10;
+    /* Center text if needed */
+    /* text-align: center; */
+    width: 100%;
+    margin: 0 auto;
+    padding: 148px 0 148px 0;
+    /* Use dark background as base */
+    border-radius: 60px;
+    background-color: #494C51; 
+}
+
+.calculator__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.calculator__header {
+    width: 100%;
+    margin-bottom: 74px;
+    text-align: left;
+    padding-left: 0;
+}
+
+.calculator__title {
+    font-family: Haval;
+    font-size: 48px;
+    font-weight: 400; /* Regular weight similar to 'Haval' */
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1; /* Match 100% line-height */
+    margin-bottom: 32px;
+    letter-spacing: 0.02em;
+}
+
+.calculator__description {
+
+    margin-bottom: 0;
+}
+.calculator__description p {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-style: SemiBold Oblique;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+/* Form Styling */
+.calculator__form-wrapper {
+    /* Gradient border trick */
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background-image: linear-gradient(#55555d, #55555d), linear-gradient(to right, #B9BABC, #55555D);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+    width: 100%;
+    /* background-color removed as it is handled by the first gradient layer */
+    padding: 50px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.calculator__body {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.calculator__column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.calculator__input-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator__input,
+.calculator__select {
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 0 24px;
+    font-family: var(--font-main);
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.calculator__input:focus,
+.calculator__select:focus {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.calculator__label {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Floating label logic (or placeholder behavior) */
+.calculator__input:focus+.calculator__label,
+.calculator__input:not(:placeholder-shown)+.calculator__label {
+    opacity: 0; /* Hide label when typing if it acts as placeholder */
+}
+
+.calculator__input::placeholder {
+    opacity: 0;
+}
+
+/* Custom Select Styles */
+.calculator__select-wrapper {
+    position: relative;
+    /* Ensure z-index is handled if needed */
+}
+
+/* The visual box replacing the select */
+.select-selected {
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 0 50px 0 24px; /* Space for text and arrow */
+    font-family: var(--font-main);
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.select-selected:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.select-selected.select-arrow-active {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0;
+    /* or keep rounded if dropdown is floating detached */
+    border-radius: 30px; /* Keep consistent shape */
+}
+
+/* Dropdown Container */
+.select-items {
+    position: absolute;
+    background-color: #494C51; /* Dark grey matching section or slightly lighter */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    top: 110%; /* Slight offset */
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide class */
+.select-hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* Items inside dropdown */
+.select-items div {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 15px 24px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px; /* Slightly smaller for options */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s;
+}
+
+.select-items div:last-child {
+    border-bottom: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Arrow rotation handled by JS class on SVG */
+.calculator__select-arrow {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.calculator__select-arrow.active {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* ... existing code ... */
+
+/* Hide original */
+.calculator__select {
+    display: none;
+}
+
+/* Options / Checkboxes */
+.calculator__options {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator__options-title {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.calculator__checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    user-select: none;
+    position: relative;
+    padding-left: 35px;
+    transition: color 0.3s;
+}
+.custom-checkbox:hover {
+    color: #fff;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px; /* Slightly rounded checkbox */
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox:hover input~.checkmark {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+/* Checkmark SVG Update using src/img/calculator/arrow.svg */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px; /* slightly scaled down to fit 24px box */
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16.6831 12.0059' xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Cpath d='M15.9966 0.000289842C15.8234 0.0054506 15.6591 0.0778367 15.5383 0.202113L5.34299 10.3974L1.14768 6.20211C1.08625 6.13813 1.01267 6.08705 0.931251 6.05186C0.849832 6.01667 0.76221 5.99808 0.673517 5.99718C0.584823 5.99627 0.49684 6.01308 0.414722 6.0466C0.332604 6.08013 0.258001 6.1297 0.195282 6.19242C0.132562 6.25514 0.0829883 6.32975 0.0494622 6.41186C0.0159361 6.49398 -0.000867871 6.58196 3.45076e-05 6.67066C0.000936886 6.75935 0.0195275 6.84697 0.0547174 6.92839C0.0899073 7.00981 0.140989 7.08339 0.204971 7.14482L4.87164 11.8115C4.99667 11.9365 5.16621 12.0067 5.34299 12.0067C5.51977 12.0067 5.68932 11.9365 5.81435 11.8115L16.481 1.14482C16.5773 1.05118 16.6431 0.930619 16.6698 0.798939C16.6964 0.667259 16.6827 0.530603 16.6303 0.406879C16.5779 0.283156 16.4894 0.178136 16.3764 0.105583C16.2633 0.0330305 16.1309 -0.0036704 15.9966 0.000289842Z' fill='white' fill-opacity='0.9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Clear old border styles using specific selector to override */
+.custom-checkbox .checkmark:after {
+    border: none;
+    width: 16px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.calculator__btn {
+    width: 100%;
+    height: 70px;
+    font-size: 18px;
+    font-weight: 600; /* Bold button text */
+    border-radius: 35px;
+    background-color: #6d0a12;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: none;
+    transition: all 0.3s ease;
+    margin-top: 53px; /* 30px gap + 53px margin = 83px */
+    text-align: center;
+}
+
+.calculator__btn:hover {
+    background-color: #85101a;
+    box-shadow: 0 15px 30px rgba(109, 10, 18, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .calculator__container {
+        padding: 0 20px;
+    }
+    .calculator__form-wrapper {
+        padding: 40px;
+    }
+    .calculator__body {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .calculator__title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator__container {
+        padding: 0 15px;
+    }
+    .calculator__form-wrapper {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    .calculator__title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    /* Mobile tweaks for description */
+    .calculator__description p {
+        font-size: 18px;
+    }
+    .calculator__options-title {
+        margin-top: 10px;
+    }
+    .calculator__btn {
+        height: 60px;
+        font-size: 16px;
+    }
+}
