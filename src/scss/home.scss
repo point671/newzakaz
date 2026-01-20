@@ -353,6 +353,244 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+/* Second Detailed Prices Table */
+.prices__detail-wrapper {
+    width: 100%;
+    margin: 60px 0;
+}
+
+.prices__detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+.prices__detail-title {
+    font-family: Haval;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+}
+
+
+
+.prices__detail-table {
+    display: grid;
+    grid-template-columns: 6fr 1.6fr 4.2fr;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #2C3035;
+}
+
+.prices__detail-row {
+    display: contents;
+}
+
+.prices__detail-col {
+    padding: 15px 20px;
+    font-family: Involve;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+}
+
+/* Header row styling */
+.prices__detail-row--head .prices__detail-col {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.prices__detail-row--head .prices__detail-col::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: calc(100% - 20px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.prices__detail-row--head .prices__detail-col:last-child::after {
+    display: none;
+}
+
+/* Fix for corner clipping on desktop */
+@media (min-width: 1025px) {
+    .prices__detail-row--head .prices__detail-col:first-child {
+        border-top-left-radius: 30px;
+    }
+
+    .prices__detail-row--head .prices__detail-col:last-child {
+        border-top-right-radius: 30px;
+    }
+
+    .prices__detail-row:last-child .prices__detail-col:first-child {
+        border-bottom-left-radius: 30px;
+    }
+
+    .prices__detail-row:last-child .prices__detail-col:last-child {
+        border-bottom-right-radius: 30px;
+    }
+}
+
+/* Column specific styles */
+.prices__detail-col--work {
+    justify-content: flex-start;
+}
+
+.prices__detail-col--unit {
+    justify-content: center;
+    text-align: center;
+}
+
+.prices__detail-col--price {
+    justify-content: flex-end;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Divider between rows */
+.prices__detail-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 20px;
+}
+
+.prices__detail-divider:last-child {
+    display: none;
+}
+
+/* Note under table */
+.prices__detail-note {
+    font-family: Involve;
+    font-size: 18px;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 30px;
+    max-width: 900px;
+}
+
+/* Responsive styles for second table */
+/* Responsive styles for second table */
+@media (max-width: 1024px) {
+    .prices__detail-table {
+        display: flex;
+        flex-direction: column;
+        gap: 8px; /* Reduced gap from 15px */
+        border: none;
+        background: transparent;
+        overflow: visible;
+        border-radius: 0;
+    }
+
+    .prices__detail-row.prices__detail-row--head {
+        display: none;
+    }
+
+    .prices__detail-divider {
+        display: none;
+    }
+
+    .prices__detail-row {
+        display: grid;
+        grid-template-areas:
+            "work price"
+            "unit price";
+        grid-template-columns: 1fr auto;
+        gap: 4px 10px; /* Compact gap */
+        background-color: #2C3035;
+        border-radius: 12px; /* Smaller radius */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 12px 15px; /* Compact padding */
+        align-items: center;
+    }
+
+    .prices__detail-col {
+        padding: 0; /* Remove inner padding */
+    }
+
+    .prices__detail-col--work {
+        grid-area: work;
+        font-size: 16px; /* Smaller font */
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    .prices__detail-col--unit {
+        grid-area: unit;
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 13px; /* Smaller detail font */
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .prices__detail-col--unit::before {
+        content: "Ед. изм.: ";
+        margin-right: 4px;
+    }
+
+    .prices__detail-col--price {
+        grid-area: price;
+        grid-row: 1 / 3; /* Span both rows */
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 6px 10px;
+        border-radius: 8px;
+        white-space: nowrap;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .prices__detail-row {
+        grid-template-areas:
+            "work"
+            "unit"
+            "price";
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .prices__detail-col--price {
+        grid-row: auto;
+        justify-content: flex-start;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        border: none;
+        padding: 0;
+        color: #fff;
+        font-weight: 700;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 8px;
+        border-radius: 0;
+    }
+    
+    .prices__detail-col--price::before {
+        content: "Цена: ";
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.6);
+        margin-right: 5px;
+    }
+}
+
 @media (max-width: 1024px) {
     .prices__table-wrapper {
         width: 100%;
