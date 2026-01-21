@@ -164,7 +164,7 @@ body {
     padding: 100px 0;
     color: #fff;
     /* Dark background from Pixso */
-    background-color: #2C3035; 
+    background-color: #292D32; 
 }
 
 .prices__header {
@@ -172,13 +172,41 @@ body {
 }
 
 .prices__title {
+    margin: 0 0 16px 0;
+    color: rgba(255, 253, 249, 1);
     font-family: Haval;
     font-size: 48px;
     font-weight: 300;
     line-height: 100%;
+    text-align: left;
     text-transform: uppercase;
-    color: rgba(255, 253, 249, 1);
+}
+
+.prices__subtitle {
+
+
+
+
+
     margin: 0 0 24px 0;
+    color: rgba(255, 255, 255, 1);
+    font-family: Haval;
+    font-style: Light;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.prices__top-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: left;
 }
 
 .prices__table-wrapper {
@@ -232,13 +260,14 @@ body {
     font-family: Involve;
     font-size: 20px;
     font-weight: 400; /* Regular for body */
-    line-height: 27px; /* Exact from Pixso 873:4337 */
+    line-height: 24px; /* Updated from 27px */
     letter-spacing: 0;
     color: rgba(255, 255, 255, 1); /* White body text - exact from Pixso */
-    border-right: none;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-right: none;
 }
 
 /* Header Styles - Exact Pixso Match (873:4376) */
@@ -252,7 +281,11 @@ body {
     border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
     border-right: none;
     position: relative;
-    line-height: 120%;
+    line-height: 29px; /* Updated from 120% */
+    text-align: left; /* Explicitly set alignment */
+
+
+
 }
 
 /* Header Separator Lines */
@@ -339,18 +372,98 @@ body {
     padding: 0 50px;
     border-radius: 35px;
     background-color: #6d0a12;
-    color: #fff;
+    color: rgba(255, 255, 255, 1);
     font-family: Involve;
-    font-size: 18px;
-    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0;
+    text-align: left;
     text-decoration: none;
     transition: all 0.3s ease;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .prices__btn:hover {
     background-color: #8a0d17;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Spoiler Trigger */
+.prices__spoiler-trigger {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-family: Haval;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 120%;
+    letter-spacing: 0px;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 50px 10px 0; /* Increased right padding for larger arrow */
+    position: relative;
+    /* Arrow Icon */
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 40px; /* Increased size */
+    transition: all 0.3s ease;
+    margin: 0;
+    width: 100%; /* Full width */
+    display: block;
+}
+
+.prices__spoiler-trigger._spoller-active {
+    transform: rotate(0); 
+}
+
+.prices__spoiler-trigger._spoller-active {
+     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 15L12 9L6 15' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+
+/* Spoiler Body */
+.prices__spoiler-body {
+    width: 100%;
+}
+
+
+/* Middle Content (Text + Button) */
+.prices__mid-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; Removed to allow full width */
+    gap: 30px;
+    margin: 60px 0;
+    width: 100%;
+}
+
+.prices__mid-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-style: SemiBold Oblique;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.prices__footer-text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Involve;
+    font-style: SemiBold Oblique;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: left;
 }
 
 /* Second Detailed Prices Table */
@@ -601,7 +714,7 @@ body {
     .prices__table {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 8px; /* Compact gap to match detail table */
         width: 100%;
         min-width: 0 !important; /* Force override of desktop 1000px */
         background: transparent;
@@ -610,9 +723,9 @@ body {
     }
 
     /* Hide Table Header */
-    .prices__row--head,
+    .prices__row.prices__row--head,
     .prices__row-divider {
-        display: none;
+        display: none !important;
     }
 
     /* Professional Card Layout with Grid */
@@ -626,12 +739,11 @@ body {
             "target target"
             "budget budget";
         grid-template-columns: 1fr auto; 
-        gap: 16px;
+        gap: 6px; /* Ultra-compact gap */
         background-color: #2C3035;
-        border-radius: 20px;
-        /* Improved Border: slightly lighter to define the card shape */
-        border: 1px solid rgba(255, 255, 255, 0.15); 
-        padding: 20px; 
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+        padding: 10px 12px; /* Ultra-compact padding */
         position: relative;
     }
 
@@ -667,10 +779,9 @@ body {
         align-items: flex-end; 
         text-align: right;
         background: rgba(255, 255, 255, 0.05);
-        /* Add border to price badge for better definition */
         border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 8px 12px;
-        border-radius: 12px;
+        padding: 6px 10px;
+        border-radius: 8px;
         height: fit-content;
     }
     .prices__col--price::before {
@@ -690,7 +801,7 @@ body {
     .prices__col--desc {
         /* Subtle separator line */
         border-top: 1px solid rgba(255,255,255,0.08);
-        padding-top: 16px;
+        padding-top: 8px; /* Reduced from 16px */
         font-size: 16px;
         line-height: 150%;
         color: rgba(255,255,255,0.8);
@@ -703,9 +814,8 @@ body {
     .prices__col--target, 
     .prices__col--budget {
         background: rgba(255, 255, 255, 0.03);
-        /* Subtle border for these blocks/pills */
         border: 1px solid rgba(255, 255, 255, 0.05);
-        padding: 12px;
+        padding: 8px; /* Reduced from 12px */
         border-radius: 12px;
     }
     
@@ -717,7 +827,7 @@ body {
         font-weight: 600;
         color: rgba(255, 255, 255, 0.4);
         font-size: 13px;
-        margin-bottom: 6px;
+        margin-bottom: 4px; /* Reduced from 6px */
         display: block;
         margin-right: 0;
         max-width: 100%;
@@ -725,7 +835,7 @@ body {
 }
 
 @media (max-width: 500px) {
-    /* Mobile Phone Adjustment */
+    /* Mobile Phone Adjustment - Match detail table "minimalist" style */
     .prices__row {
         grid-template-areas: 
             "service"
@@ -734,12 +844,30 @@ body {
             "target"
             "budget";
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 4px; /* Even tighter for phone */
     }
+
+    /* Remove badge style on small screens and use top border separator */
     .prices__col--price {
         align-items: flex-start;
         text-align: left;
         width: 100%;
+        background: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 6px; /* Reduced padding */
+        margin-top: 2px;
+    }
+    
+    .prices__col--price::before {
+        content: "Цена: ";
+        font-size: 14px; 
+        margin-bottom: 0;
+        display: inline;
+        margin-right: 5px;
     }
 }
 

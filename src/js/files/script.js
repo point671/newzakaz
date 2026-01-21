@@ -106,3 +106,5 @@ document.addEventListener("DOMContentLoaded", function () {
     then close all select boxes: */
     document.addEventListener("click", closeAllSelects);
 });
+
+

@@ -270,7 +270,11 @@
     <section class="prices">
         <div class="projects__container">
             <div class="prices__header">
-                <h2 class="prices__title">Расценки на основные работы</h2>
+                <h2 class="prices__title">Цены на ремонт коттеджей и частных домов в Москве и области</h2>
+                <p class="prices__subtitle">Пакеты ремонта коттеджа за м² (работы)</p>
+                <p class="prices__top-text">
+                    Цены ниже ориентировочные для работ без материалов по коттеджам от 120 м² в Москве <br> и Московской области. Финальная стоимость зависит от состояния дома, сложности <br> инженерии и отделки.
+                </p>
             </div>
             
             <div class="prices__table-wrapper">
@@ -325,19 +329,34 @@
                 </div>
             </div>
 
-            <!-- Second Table: Detailed Work Prices -->
-            <div class="prices__detail-wrapper">
-                <div class="prices__detail-header">
-                    <h3 class="prices__detail-title">Расценки на основные работы</h3>
+            <!-- Middle Content -->
+            <div class="prices__mid-content">
+                <p class="prices__mid-text">
+                    Для точного расчёта ремонта коттеджа под ключ в Москве и области мы составляем <br> детальную смету по видам работ и материалам, закрепляем цену за м² и сроки в договоре.
+                </p>
+                <a href="#contact" class="prices__btn">Запросить подробный прайс и смету</a>
+                
+                <!-- Spoiler Container -->
+                <div data-spollers>
+                    <!-- Spoiler Trigger -->
+                    <button type="button" data-spoller class="prices__spoiler-trigger">Расценки на основные работы</button>
+                    
+                    <!-- Spoiler Content -->
+                    <div class="prices__spoiler-body">
+                        <p class="prices__mid-text">
+                            Ориентировочные расценки на популярные работы по ремонту и отделке коттеджа. Цены указаны за единицу объёма работ и служат отправной точкой для составления сметы.
+                        </p>
 
-                </div>
-                <div class="prices__detail-table">
-                    <!-- Header Row -->
-                    <div class="prices__detail-row prices__detail-row--head">
-                        <div class="prices__detail-col prices__detail-col--work">Вид работ</div>
-                        <div class="prices__detail-col prices__detail-col--unit">Ед. изм.</div>
-                        <div class="prices__detail-col prices__detail-col--price">Ориентировочная цена, руб.</div>
-                    </div>
+                    <!-- Second Table: Detailed Work Prices -->
+                    <div class="prices__detail-wrapper">
+                        <div class="prices__detail-table">
+                            <!-- Header Row -->
+                            <div class="prices__detail-row prices__detail-row--head">
+                                <div class="prices__detail-col prices__detail-col--work">Вид работ</div>
+                                <div class="prices__detail-col prices__detail-col--unit">Ед. изм.</div>
+                                <div class="prices__detail-col prices__detail-col--price">Ориентировочная цена, руб.</div>
+                            </div>
+
 
                     <!-- Row 1 -->
                     <div class="prices__detail-row">
@@ -611,17 +630,171 @@
                     </div>
                 </div>
 
-                <p class="prices__detail-note">*Цены ориентировочные для работ без материалов по коттеджам от 120 м² в Москве и Московской области. Финальная стоимость зависит от состояния дома, сложности инженерии и отделки.</p>
+
             </div>
 
             <div class="prices__footer">
-                <p class="prices__note">Ориентировочные расценки на популярные работы по ремонту и отделке коттеджа. Цены указаны за единицу объёма работ и служат отправной точкой для составления сметы.</p>
-                <p class="prices__note">Для точного расчёта ремонта коттеджа под ключ в Москве и области мы составляем детальную смету по видам работ и материалам.</p>
-                <a href="#contact" class="prices__btn">Запросить подробный прайс и смету</a>
+                 <p class="prices__footer-text">
+                    Все работы по ремонту коттеджа и частного дома в Москве и области считаются по детальной смете. При больших объёмах предусмотрены индивидуальные скидки.
+                </p>
+            </div>
+            </div> <!-- End of Spoiler Body -->
+            </div> <!-- End of Spoiler Container -->
+        </div>
+    </section>
+
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="benefits__container">
+            <div class="benefits__header">
+                <h2 class="benefits__title">Почему выгодно заказать ремонт коттеджа у нас</h2>
+                <p class="benefits__subtitle">Гарантии, опыт и прозрачные условия</p>
+            </div>
+            
+            <div class="benefits__grid">
+                <!-- Item 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <img src="@img/benefits/molot.svg" alt="Опыт">
+                    </div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Опыт ремонта коттеджей в Москве и области</h3>
+                        <p class="benefit-card__text">Команда, которая специализируется на коттеджах и частных домах, а не только на квартирах. Отдельные бригады по внутренней отделке, фасадам, кровле и инженерным системам.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <img src="@img/benefits/galstuk.svg" alt="Договор">
+                    </div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Работаем по договору с юридическим лицом</h3>
+                        <p class="benefit-card__text">Договор на ремонт коттеджа под ключ с фиксированной сметой, сроками и гарантийными обязательствами.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <img src="@img/benefits/count.svg" alt="Смета">
+                    </div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Прозрачная смета и этапная оплата</h3>
+                        <p class="benefit-card__text">Детальная смета по видам работ и материалам, оплата по факту завершения этапов, без скрытых доплат.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <img src="@img/benefits/medal.svg" alt="Гарантия">
+                    </div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Гарантия на работы</h3>
+                        <p class="benefit-card__text">Гарантия на ремонт и отделку коттеджа до 5 лет, сервисное сопровождение после сдачи.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <img src="@img/benefits/worker.svg" alt="Мастера">
+                    </div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Собственные мастера и инженерный контроль</h3>
+                        <p class="benefit-card__text">Штат мастеров и прорабов, инженерный надзор и контроль качества скрытых работ (фото и видео-отчёты).</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <img src="@img/benefits/human.svg" alt="Локация">
+                    </div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Работаем по Москве и всему Подмосковью</h3>
+                        <p class="benefit-card__text">Выезд сметчика в течение нескольких дней, понимание местной специфики и логистики.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Stages of Repair Section -->
+    <section class="benefits benefits--stages">
+        <div class="benefits__container">
+            <div class="benefits__header">
+                <h2 class="benefits__title">Этапы ремонта коттеджа под ключ</h2>
+            </div>
+            
+            <div class="benefits__grid">
+                <!-- Step 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">1.</div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Заявка и консультация</h3>
+                        <p class="benefit-card__text">Вы оставляете заявку или отправляете план дома. Мы уточняем задачи и ориентировочный бюджет.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">2.</div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Выезд сметчика и диагностика дома</h3>
+                        <p class="benefit-card__text">Специалист выезжает в Москву или Подмосковье, выполняет обмеры, фотофиксацию и обследование конструкций и инженерии.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">3.</div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Смета и план работ</h3>
+                        <p class="benefit-card__text">Готовим подробную смету, график работ и при необходимости подключаем дизайнера.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">4.</div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Договор и подготовка площадки</h3>
+                        <p class="benefit-card__text">Подписываем договор на ремонт коттеджа, организуем завоз материалов, защиту помещений и временные коммуникации.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">5.</div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Черновые работы и инженерия</h3>
+                        <p class="benefit-card__text">Демонтаж, перепланировка, стяжки, штукатурка, разводка электрики, отопления, водоснабжения и вентиляции.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">6.</div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Чистовая отделка и монтаж оборудования</h3>
+                        <p class="benefit-card__text">Малярные работы, укладка напольных покрытий, монтаж дверей, кухонь, сантехники и света.</p>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">7.</div>
+                    <div class="benefit-card__content">
+                        <h3 class="benefit-card__title">Сдача объекта и гарантия</h3>
+                        <p class="benefit-card__text">Финальная приёмка по чек-листу, передача актов, фотоотчёта и гарантийных обязательств.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 		</main>
