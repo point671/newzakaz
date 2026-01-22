@@ -84,6 +84,7 @@
            justify-content: center;
            
            width: 331px; // User requested strict 331px
+           max-width: 100%;
            margin: 0 auto; 
            margin-bottom: rem(30); // Add space between logo and text content
              transform: translate(0, 97px);
@@ -94,6 +95,14 @@
                display: block; 
                    transform: translate(0, 20px);
 
+               @media (max-width: 450px) {
+                   height: auto;
+               }
+
+               @media (max-width: 900px) {
+                   transform: translate(0, 0);
+                   margin-bottom: 20px;
+               }
            }
         }
         
@@ -113,6 +122,10 @@
     text-align: left;
     text-transform: uppercase;
     margin-bottom: 24px;
+
+    @media (max-width: 900px) {
+        font-size: 20px;
+    }
         }
         
         @media (max-width: 900px) {
@@ -181,6 +194,10 @@
         text-align: left;
         text-transform: uppercase;
         margin-bottom: rem(24); // 24px spacing per request
+
+        @media (max-width: 900px) {
+            font-size: 20px;
+        }
     }
     
     &__name {
@@ -205,6 +222,10 @@
         letter-spacing: 0%;
         text-align: left;
         margin-bottom: 24px;
+
+        @media (max-width: 900px) {
+            font-size: 18px;
+        }
     }
     
     // Reset standard image container for other uses if any

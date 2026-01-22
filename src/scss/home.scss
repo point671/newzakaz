@@ -211,9 +211,16 @@ body {
 
 .prices__table-wrapper {
     width: 100%;
-    overflow-x: auto; /* Scroll on mobile */
     margin-bottom: 60px;
     padding-bottom: 20px; /* Space for scrollbar */
+}
+
+@media (max-width: 1024px) {
+    .prices__table-wrapper {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 .prices__table {
@@ -706,6 +713,8 @@ body {
 
 @media (max-width: 1024px) {
     .prices__table-wrapper {
+        max-width: 100%;
+        overflow-x: auto;
         width: 100%;
         overflow: hidden; /* Prevent horizontal scroll causing page wideness, allow internal content to flow */
         padding: 0 1px; /* Avoid border clipping */
@@ -927,6 +936,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+        overflow-x: clip; 
+    }
 }
 
 /* Title */
@@ -1432,6 +1446,10 @@ text-align: left;
 .calculator__form-wrapper {
     /* Gradient border trick */
     border: 2px solid transparent;
+
+    @media (max-width: 1024px) {
+         max-width: 100%;
+    }
     border-radius: 30px;
     background-image: linear-gradient(#55555d, #55555d), linear-gradient(to right, #B9BABC, #55555D);
     background-origin: border-box;
