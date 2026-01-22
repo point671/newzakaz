@@ -1,0 +1,173 @@
+// Extracted from Pixso DSL item 888:585
+// Main group: 1182px x 906px
+// Title: Haval Light, 48px, color #FFFDF9 (rgba(255,253,249,1)), line-height 100%, uppercase
+// Right frame: 580x617, radius 34px, inner shadows (multiple)
+// Left photo position: top 170px, left 0
+// Right frame position: top 170px, left 602px (gap ~22px from edge)
+// Subtitle: Haval Light, 24px  
+// Body text: Involve Regular, 24px, color rgba(255,255,255,0.6)
+
+.who-answer {
+    padding-top: clamp(3.75rem, 1.77rem + 9.89vw, 9.25rem);
+    padding-bottom: clamp(3.125rem, 2.001rem + 5.618vw, 6.25rem);
+    background-color: #292D32;
+    color: #fff;
+
+    &__container {
+        max-width: rem(1182); // Pixso: 1182px
+    }
+
+    &__title {
+        font-family: "Haval";
+        font-size: clamp(2rem, 1.3rem + 2.5vw, 3rem); // ~32px to 48px (Pixso: 48px)
+        font-weight: 300; // Light
+        line-height: 100%; // Pixso: 100%
+        text-transform: uppercase;
+        color: rgba(255, 253, 249, 1); // Pixso: #FFFDF9
+        margin-bottom: clamp(2.5rem, 2rem + 2.5vw, 5rem); // ~40-80px gap to content
+        text-align: left;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 580fr 580fr; // Pixso: roughly equal columns (580px each)
+        gap: rem(22); // Pixso: gap between columns ~22px (1182 - 580 - 580 = 22)
+        
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+            gap: rem(40);
+        }
+    }
+
+    // Card styling
+    &__col {
+        display: flex;
+        flex-direction: column;
+        border-radius: rem(34);
+        overflow: hidden;
+        position: relative;
+    }
+
+    // Right Column (Company) - Standard Card
+    &__col--card {
+        background: rgba(69, 72, 74, 0.6);
+        padding: rem(30);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 
+            inset 0 0 16px rgba(242, 242, 242, 0.1),
+            inset 0 0 3px rgba(255, 255, 255, 0.1),
+            inset -1px -1px 0.5px rgba(255, 255, 255, 0.3),
+            inset 1px 1px 0.5px rgba(255, 255, 255, 0.3);
+            
+        .who-answer__logo {
+           margin-bottom: rem(20);
+           width: rem(200); // Standardize logo width
+           img { width: 100%; height: auto; }
+        }
+        .who-answer__subtitle {
+            margin-bottom: rem(16);
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+
+    // Left Column (Person) - Overlay Design
+    &__col--person {
+        min-height: rem(617); // Match height
+        justify-content: flex-end; // Push overlay to bottom
+        padding: 0; // Remove default padding if any
+        
+        @media (max-width: 900px) {
+            min-height: rem(500);
+        }
+    }
+
+    &__bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    &__overlay {
+        position: relative;
+        z-index: 1;
+        
+        // Стили из Pixso 873:4721
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        
+        // Glassmorphism эффекты
+        box-shadow: 
+            inset 0 0 16px rgba(242, 242, 242, 0.1),
+            inset 0 0 3px rgba(255, 255, 255, 0.5),
+            inset 1px 1px 0.5px rgba(255, 255, 255, 1),
+            inset -1px -1px 0.5px rgba(255, 255, 255, 1);
+        
+        padding: rem(30);
+        display: flex;
+        flex-direction: column;
+        gap: rem(12);
+        
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    // Typography overrides for Person card
+    &__col--person .who-answer__subtitle {
+        font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #fff;
+        margin: 0;
+    }
+    
+    &__name {
+        font-family: "Involve"; 
+        font-style: italic;
+        font-size: rem(20);
+        font-weight: 600;
+        color: #fff;
+        margin: 0;
+    }
+    
+    &__col--person .who-answer__text {
+         color: rgba(255, 255, 255, 0.9);
+         font-size: rem(18);
+    }
+    
+    // Reset standard image container for other uses if any
+    &__image {
+        display: none; // Hide standard image container if present in structure
+    }
+
+    &__logo {
+        max-width: rem(250);
+        margin-bottom: rem(16);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__subtitle {
+        font-family: "Haval";
+        font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem); // ~20-24px (Pixso: 24px)
+        font-weight: 300;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 1);
+        margin: 0;
+    }
+
+    &__text {
+        font-family: "Involve";
+        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem); // ~16-24px (Pixso: 24px)
+        font-weight: 400; // Regular
+        line-height: 120%;
+        color: rgba(255, 255, 255, 0.6); // Pixso: 60% opacity
+    }
+}
