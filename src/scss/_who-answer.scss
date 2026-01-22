@@ -14,25 +14,30 @@
     color: #fff;
 
     &__container {
-        max-width: rem(1182); // Pixso: 1182px
+        max-width: rem(1200); // Expanded slightly for exact fit
     }
 
     &__title {
         font-family: "Haval";
-        font-size: clamp(2rem, 1.3rem + 2.5vw, 3rem); // ~32px to 48px (Pixso: 48px)
-        font-weight: 300; // Light
-        line-height: 100%; // Pixso: 100%
+        font-size: clamp(2rem, 1.3rem + 2.5vw, 3rem); 
+        font-weight: 300; 
+        line-height: 100%; 
         text-transform: uppercase;
-        color: rgba(255, 253, 249, 1); // Pixso: #FFFDF9
-        margin-bottom: clamp(2.5rem, 2rem + 2.5vw, 5rem); // ~40-80px gap to content
+        color: rgba(255, 253, 249, 1); 
+        margin-bottom: clamp(2.5rem, 2rem + 2.5vw, 5rem); 
         text-align: left;
     }
 
     &__grid {
         display: grid;
-        grid-template-columns: 580fr 580fr; // Pixso: roughly equal columns (580px each)
-        gap: rem(22); // Pixso: gap between columns ~22px (1182 - 580 - 580 = 22)
+        grid-template-columns: rem(580) rem(587); // Exact desktop dimensions 
+        justify-content: space-between;
+        gap: rem(22);
         
+        @media (max-width: 1200px) {
+             grid-template-columns: 1fr 1fr; 
+        }
+
         @media (max-width: 900px) {
             grid-template-columns: 1fr;
             gap: rem(40);
@@ -50,32 +55,60 @@
 
     // Right Column (Company) - Standard Card
     &__col--card {
+        height: rem(653); 
+        min-height: rem(653);
+
         background: rgba(69, 72, 74, 0.6);
         padding: rem(30);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         box-shadow: 
-            inset 0 0 16px rgba(242, 242, 242, 0.1),
-            inset 0 0 3px rgba(255, 255, 255, 0.1),
-            inset -1px -1px 0.5px rgba(255, 255, 255, 0.3),
-            inset 1px 1px 0.5px rgba(255, 255, 255, 0.3);
+            inset 0 0 16px rgba(242, 242, 242, 0.05),
+            inset 0 0 3px rgba(255, 255, 255, 0.05),
+            inset -1px -1px 0.5px rgba(255, 255, 255, 0.15),
+            inset 1px 1px 0.5px rgba(255, 255, 255, 0.15);
             
+        // Flexbox layout for precise positioning
+        display: flex;
+        flex-direction: column;
+
         .who-answer__logo {
-           margin-bottom: rem(20);
-           width: rem(200); // Standardize logo width
-           img { width: 100%; height: auto; }
+           // Logo takes available space to center itself vertically relative to the empty space
+           flex: 1; 
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           
+           width: rem(260); // Enlarged logo
+           margin: 0 auto; 
+           
+           img { 
+               width: 100%; 
+               height: auto; 
+               display: block; 
+           }
         }
+        
+        // Group text content at the bottom
+        .who-answer__content-wrapper {
+             margin-top: rem(30); 
+        }
+
         .who-answer__subtitle {
             margin-bottom: rem(16);
             color: rgba(255, 255, 255, 1);
+        }
+        
+        @media (max-width: 900px) {
+            min-height: auto;
         }
     }
 
     // Left Column (Person) - Overlay Design
     &__col--person {
-        min-height: rem(617); // Match height
-        justify-content: flex-end; // Push overlay to bottom
-        padding: 0; // Remove default padding if any
+        min-height: rem(730); 
+        justify-content: flex-end; 
+        padding: 0; 
         
         @media (max-width: 900px) {
             min-height: rem(500);
@@ -96,24 +129,23 @@
         position: relative;
         z-index: 1;
         
-        // Стили из Pixso 873:4721
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        
-        // Glassmorphism эффекты
+        // Match styles with .who-answer__col--card
+        background: rgba(69, 72, 74, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         box-shadow: 
-            inset 0 0 16px rgba(242, 242, 242, 0.1),
-            inset 0 0 3px rgba(255, 255, 255, 0.5),
-            inset 1px 1px 0.5px rgba(255, 255, 255, 1),
-            inset -1px -1px 0.5px rgba(255, 255, 255, 1);
+            inset 0 0 16px rgba(242, 242, 242, 0.05),
+            inset 0 0 3px rgba(255, 255, 255, 0.05),
+            inset -1px -1px 0.5px rgba(255, 255, 255, 0.15),
+            inset 1px 1px 0.5px rgba(255, 255, 255, 0.15);
         
+        border-radius: rem(34);
         padding: rem(30);
         display: flex;
         flex-direction: column;
         gap: rem(12);
         
-        border-top: 1px solid rgba(255,255,255,0.1);
+        border-top: none;
     }
     
     // Typography overrides for Person card
