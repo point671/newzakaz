@@ -20,14 +20,14 @@
     &__title {
     font-family: Haval;
     font-style: Light;
-    font-size: 48px;
+    font-size: clamp(1.75rem, 1.25rem + 2.5vw, 3rem); // Fluid 28px to 48px
     font-weight: 300;
     line-height: 100%;
     letter-spacing: 0px;
     text-align: left;
     text-transform: uppercase;
     color: rgba(255, 253, 249, 1);
-    margin-bottom: 75px;
+    margin-bottom: clamp(1.875rem, 1rem + 3vw, 4.6875rem); // Fluid 30px to 75px
     }
 
     &__grid {
@@ -75,6 +75,15 @@
         flex-direction: column;
         justify-content: flex-end; // Push all content (Logo + Text) to the bottom
 
+        // Flex container for Title + Logo
+        .who-answer__header-row {
+            display: flex;
+            align-items: flex-end; // Align text to bottom as requested
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: rem(30);
+        }
+
         .who-answer__logo {
            // Logo takes available space to center itself vertically relative to the empty space
            // flex: 1; // Removed per user request to pack content at bottom
@@ -85,15 +94,29 @@
            
            width: 331px; // User requested strict 331px
            max-width: 100%;
-           margin: 0 auto; 
-           margin-bottom: rem(30); // Add space between logo and text content
-             transform: translate(0, 97px);
+           // margin: 0 auto; // REMOVED auto centering
+           
+           // margin-bottom: rem(30); // Moved to header-row
+            transform: translate(-88px, 29px);
+
+           @media (max-width: 1200px) {
+               margin-bottom: 0; 
+           }
+
+           // Avoid clipping in the intermediate state (900px - 1050px)
+           @media (max-width: 1050px) {
+                width: 260px; 
+                img {
+                    height: auto;
+                }
+           }
+
 
            img { 
                width: 100%; 
                height: 279px; // User requested strict 279px
                display: block; 
-                   transform: translate(0, 20px);
+                
 
                @media (max-width: 450px) {
                    height: auto;
@@ -108,24 +131,20 @@
         
         // Group text content at the bottom
         .who-answer__content-wrapper {
-             margin-top: rem(30); 
+             margin-top: 0; 
         }
 
         .who-answer__subtitle {
-      color: rgba(255, 255, 255, 1);
-    font-family: Haval;
-    font-style: Light;
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 120%;
-    letter-spacing: 0.3px;
-    text-align: left;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-
-    @media (max-width: 900px) {
-        font-size: 20px;
-    }
+            color: rgba(255, 255, 255, 1);
+            font-family: Haval;
+            font-style: Light;
+            font-size: clamp(16px, 2.2vw, 24px); // Fluid scaling to match logo
+            font-weight: 300;
+            line-height: 120%;
+            letter-spacing: 0.3px;
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 0; // Removing bottom margin as it's in a row now
         }
         
         @media (max-width: 900px) {
