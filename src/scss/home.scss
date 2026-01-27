@@ -1811,3 +1811,12 @@ text-align: left;
         font-size: 16px;
     }
 }
+
+.main-reviews {
+    background-color: #292D32;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+}
