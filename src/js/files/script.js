@@ -130,6 +130,14 @@ document.addEventListener("DOMContentLoaded", function () {
             engineering: 2500
         };
 
+        // Очищаем результат при клике на кнопку (до валидации браузера)
+        const calcBtn = form.querySelector('.calculator__btn');
+        if (calcBtn) {
+            calcBtn.addEventListener('click', function() {
+                resultBlock.innerHTML = '';
+            });
+        }
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -141,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const engineering = document.getElementById('engineering').checked;
 
             if (!area || area <= 0 || !baseRates[repairType]) {
+                resultBlock.innerHTML = '';
                 resultBlock.innerHTML = '<p class="calculator__error">Укажите корректную площадь и тип ремонта.</p>';
                 return;
             }
