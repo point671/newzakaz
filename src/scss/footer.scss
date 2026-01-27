@@ -4,6 +4,7 @@
 
 // Footer Variables
 $footer-bg: #292D32;
+$footer-inner-bg: #494C51; // New inner bg color
 $footer-text: #FFFDF9;
 $footer-text-muted: rgba(255, 253, 249, 0.6);
 $footer-btn-bg: #7D1F2E;
@@ -12,35 +13,46 @@ $footer-radius: 60px;
 
 .footer {
     background: $footer-bg;
-    border-radius: $footer-radius $footer-radius 0 0;
-    padding: rem(56) 0 rem(40); // Adjusted padding based on visual rhythm
-    font-family: "Involve", sans-serif;
-    color: $footer-text;
+    padding: 0; // Remove padding from outer wrapper
     position: relative;
     
-    // Smooth border with gradient mask
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        padding: 1px;
-        border-radius: inherit;
-        background: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.47) 0%,
-            rgba(255, 255, 255, 0.24) 100%
-        );
-        -webkit-mask: 
-            linear-gradient(#fff 0 0) content-box, 
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude;
-        pointer-events: none;
+    // Inner body that mimics the calculator look
+    &__body {
+        background:#292D32;
+        border-radius: $footer-radius $footer-radius 0 0;
+        padding: rem(56) 0 rem(40);
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+
+        // Smooth border with gradient mask
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.5) 0%,
+                rgba(255, 255, 255, 0) 70px
+            );
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
     }
     
     &__container {
         display: flex;
         flex-direction: column;
-        gap: rem(60); // Gap between Top and Bottom rows
+        gap: rem(60); 
     }
     
     //======================================

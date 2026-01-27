@@ -1814,9 +1814,38 @@ text-align: left;
 
 .main-reviews {
     background-color: #292D32;
-
+    padding: rem(100) 0;
+    
+    &__title {
+        color: rgba(255, 253, 249, 1);
+        font-family: Haval, sans-serif;
+        font-size: rem(48);
+        font-weight: 300;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0 rem(20);
+        
+        @media (max-width: 768px) {
+            font-size: rem(32);
+        }
+    }
+    
     &__container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(74);
+        
+        // Widget wrapper - override inline width on mobile
+        > div {
+            @media (max-width: 600px) {
+                width: 100% !important;
+                max-width: 560px;
+                padding: 0 rem(20);
+                box-sizing: border-box;
+            }
+        }
     }
 }
