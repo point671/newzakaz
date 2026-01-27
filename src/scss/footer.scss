@@ -1,5 +1,5 @@
 //====================================================================================================
-// Footer Section - BEM Methodology
+// Footer Section - Refined Implementation
 //====================================================================================================
 
 // Footer Variables
@@ -7,303 +7,318 @@ $footer-bg: #292D32;
 $footer-text: #FFFDF9;
 $footer-text-muted: rgba(255, 253, 249, 0.6);
 $footer-btn-bg: #7D1F2E;
-$footer-btn-hover: darken(#7D1F2E, 8%);
+$footer-btn-hover: darken(#7D1F2E, 5%);
 $footer-radius: 60px;
 
 .footer {
     background: $footer-bg;
     border-radius: $footer-radius $footer-radius 0 0;
-    padding: rem(47) 0;
+    padding: rem(56) 0 rem(40); // Adjusted padding based on visual rhythm
     font-family: "Involve", sans-serif;
     color: $footer-text;
-    
-    // Gradient border effect
     position: relative;
+    
+    // Smooth border with gradient mask
     &::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         padding: 1px;
         border-radius: inherit;
         background: linear-gradient(
             to bottom,
-            rgba(255, 255, 255, 0.47),
-            rgba(255, 255, 255, 0.24)
+            rgba(255, 255, 255, 0.47) 0%,
+            rgba(255, 255, 255, 0.24) 100%
         );
         -webkit-mask: 
             linear-gradient(#fff 0 0) content-box, 
             linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
     }
     
-    // Container
     &__container {
-        max-width: rem(1180);
-        margin: 0 auto;
-        padding: 0 rem(15);
+        display: flex;
+        flex-direction: column;
+        gap: rem(60); // Gap between Top and Bottom rows
     }
     
-    // Main content grid
-    &__content {
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
+    //======================================
+    // Top Row
+    //======================================
+    &__top {
+        display: flex;
+        justify-content: space-between;
         gap: rem(40);
-        align-items: flex-start;
-        margin-bottom: rem(40);
+        
+        @media (max-width: $pc) {
+            flex-wrap: wrap;
+            gap: rem(30);
+        }
     }
     
-    // Navigation section
-    &__nav {
-        display: contents;
-    }
-    
-    // Column
+    // Columns
     &__column {
         display: flex;
         flex-direction: column;
-        gap: rem(14);
+        gap: rem(14); // Spacing between links
+        min-width: rem(180);
     }
     
-    // Title
-    &__title {
-        font-size: rem(16);
-        line-height: 1;
-        font-weight: 400;
-    }
-    
-    // Link
-    &__link {
-        font-size: rem(16);
-        line-height: 1;
-        color: $footer-text;
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-        
-        &:hover,
-        &:focus {
-            opacity: 0.7;
-        }
-        
-        &:focus-visible {
-            outline: 1px solid $footer-text;
-            outline-offset: 2px;
-        }
-    }
-    
-    // Contacts section
     &__contacts {
         display: flex;
         flex-direction: column;
         gap: rem(14);
+        min-width: rem(200);
     }
     
-    // Phone & Email links
-    &__phone,
-    &__email {
-        display: flex;
-        align-items: center;
-        gap: rem(8);
-        font-size: rem(16);
-        line-height: 1;
-        color: $footer-text;
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-        
-        svg {
-            width: rem(18);
-            height: rem(18);
-            flex-shrink: 0;
-        }
-        
-        &:hover,
-        &:focus {
-            opacity: 0.7;
-        }
-    }
-    
-    // Action section with button
-    &__action {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: rem(20);
-    }
-    
-    // CTA Button
-    &__btn {
-        padding: rem(16) rem(32);
-        background: $footer-btn-bg;
-        color: $footer-text;
-        border: 1px solid $footer-btn-bg;
-        border-radius: rem(10);
-        font-family: inherit;
-        font-size: rem(16);
-        font-weight: 400;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-        
-        &:hover,
-        &:focus {
-            background: $footer-btn-hover;
-            border-color: $footer-btn-hover;
-        }
-        
-        &:active {
-            transform: scale(0.98);
-        }
-        
-        &:focus-visible {
-            outline: 2px solid $footer-text;
-            outline-offset: 2px;
-        }
-    }
-    
-    // Logo
-    &__logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        img {
-            max-width: rem(100);
-            height: auto;
-        }
-    }
-    
-    // Company info section
-    &__info {
-        display: flex;
-        flex-direction: column;
-        gap: rem(4);
-        margin-bottom: rem(20);
-    }
-    
-    &__company,
-    &__address,
-    &__legal {
-        font-size: rem(14);
-        line-height: 1.4;
-        color: $footer-text-muted;
-        margin: 0;
-    }
-    
-    // Copyright section
-    &__copyright {
+    &__copyright-text {
         text-align: right;
+        max-width: rem(300);
         
         p {
-            font-size: rem(14);
-            line-height: 1.4;
-            color: $footer-text-muted;
-            margin: 0;
-        }
-    }
-    
-    // Bottom row with info and copyright
-    &__bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: rem(40);
-    }
-    
-    //====================================================================================================
-    // Responsive Styles (Desktop-First)
-    //====================================================================================================
-    
-    // 1440px
-    @media (max-width: em(1440)) {
-        &__content {
-            gap: rem(30);
-        }
-    }
-    
-    // 1024px (tablets landscape)
-    @media (max-width: $pc) {
-        border-radius: rem(40) rem(40) 0 0;
-        
-        &__content {
-            grid-template-columns: repeat(3, 1fr) auto;
-            gap: rem(25);
+            margin-bottom: rem(5);
+            color: rgba(255, 253, 249, 1);
+            font-family: Involve;
+            font-style: Regular;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: right;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
         
-        &__nav {
-            display: contents;
-        }
-        
-        &__action {
-            grid-column: span 1;
-        }
-    }
-    
-    // 768px (tablets)
-    @media (max-width: $tablet) {
-        border-radius: rem(30) rem(30) 0 0;
-        padding: rem(40) 0;
-        
-        &__content {
-            grid-template-columns: repeat(2, 1fr);
-            gap: rem(30);
-        }
-        
-        &__action {
-            grid-column: span 2;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        &__bottom {
-            flex-direction: column;
-            gap: rem(20);
-        }
-        
-        &__copyright {
+        @media (max-width: $tablet) {
             text-align: left;
         }
     }
     
-    // 375px (mobile)
+    // Typography
+    &__title {
+        color: rgba(255, 253, 249, 1);
+        font-family: Involve;
+        font-style: Regular;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+        margin-bottom: rem(6); // SLight separate for title
+    }
+    
+    &__link {
+        color: rgba(255, 253, 249, 1);
+
+font-family: Involve;
+font-style: Regular;
+font-size: 16px;
+font-weight: 400;
+line-height: 16px;
+text-align: left;
+text-decoration: none;
+transition: opacity 0.3s ease;
+        
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    
+    &__phone,
+    &__email {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+        font-size: rem(16);
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+
+
+        color: rgba(255, 253, 249, 1);
+        font-family: Involve;
+        font-style: Regular;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+        img {
+            flex-shrink: 0;
+        }
+        
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__phone {
+        margin-top: auto;
+    }
+    
+    //======================================
+    // Bottom Row
+    //======================================
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; // Align center vertically
+        padding-top: rem(10);
+        
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            align-items: center; // Center everything on mobile/tablet
+            text-align: center;
+            gap: rem(30);
+        }
+    }
+    
+    &__info {
+        flex: 1;
+        max-width: rem(400);
+        
+        
+
+        p {
+            color: rgba(255, 253, 249, 1);
+            font-family: Involve;
+            font-style: Regular;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 130%;
+            text-align: left;
+            margin-bottom: rem(2);
+        }
+        
+        @media (max-width: $tablet) {
+            order: 2; // Move below button on mobile typically, or keep structure
+            max-width: 100%;
+        }
+    }
+    
+    &__action {
+        flex: 1;
+        display: flex;
+        justify-content: right;
+        
+        @media (max-width: $tablet) {
+            order: 1; // Button prominent on mobile
+        }
+    }
+    
+    &__btn {
+        padding: rem(18) rem(36);
+        border: 1px solid transparent;
+        background: linear-gradient(#670009, #670009) padding-box,
+                    linear-gradient(to bottom, #B58287, #802B32) border-box;
+        
+        box-shadow: 0 0 200px rgba(0, 0, 0, 0.25);
+        
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+
+
+color: rgba(255, 255, 255, 1);
+
+font-family: Involve;
+font-style: Regular;
+font-size: 24px;
+font-weight: 400;
+line-height: 29px;
+letter-spacing: 0%;
+text-align: left;
+
+
+
+
+        
+        
+        &:hover {
+            background: darken($footer-btn-bg, 5%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    }
+    
+    &__logo {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        
+        img {
+            width: rem(200);
+            height: rem(168);
+            object-fit: contain;
+        }
+        
+        @media (max-width: $tablet) {
+            justify-content: center;
+            order: 3;
+        }
+    }
+    
+    //======================================
+    // Responsive Adjustments
+    //======================================
+    
+    @media (max-width: em(1440)) {
+        padding: rem(50) 0 rem(35);
+        
+        &__container {
+            gap: rem(50);
+        }
+    }
+    
+    // Tablet (Landscape/Portrait)
+    @media (max-width: $tablet) {
+        border-radius: rem(40) rem(40) 0 0;
+        
+        &__top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: rem(40) rem(20);
+        }
+        
+        &__copyright-text {
+            text-align: left;
+            grid-column: span 2;
+        }
+        
+        &__bottom {
+            flex-direction: column;
+            gap: rem(40);
+        }
+        
+        &__info, &__logo, &__action {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            max-width: none;
+        }
+        
+        &__logo {
+            justify-content: center;
+        }
+    }
+    
+    // Mobile
     @media (max-width: $mobileSmall) {
-        border-radius: rem(20) rem(20) 0 0;
+        border-radius: rem(30) rem(30) 0 0;
         padding: rem(30) 0;
         
-        &__content {
+        &__top {
             grid-template-columns: 1fr;
-            gap: rem(24);
             text-align: center;
+            gap: rem(30);
         }
         
-        &__column {
+        &__column, &__contacts, &__copyright-text {
             align-items: center;
-        }
-        
-        &__contacts {
-            align-items: center;
-        }
-        
-        &__action {
-            grid-column: 1;
-            flex-direction: column;
-            gap: rem(20);
-        }
-        
-        &__btn {
-            width: 100%;
-        }
-        
-        &__info {
             text-align: center;
+            grid-column: span 1;
         }
         
-        &__copyright {
-            text-align: center;
+        &__phone, &__email {
+            justify-content: center;
         }
     }
 }

@@ -105,6 +105,69 @@ document.addEventListener("DOMContentLoaded", function () {
     /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
     document.addEventListener("click", closeAllSelects);
+
+
+    /* ====================================
+       Calculator Logic - Расчёт стоимости ремонта
+       ==================================== */
+    const form = document.getElementById('calculatorForm');
+    const resultBlock = document.getElementById('calc-result');
+
+    // Проверяем, существует ли форма калькулятора на странице
+    if (form && resultBlock) {
+        // Среднерыночные ставки за м² по работам
+        const baseRates = {
+            cosmetic: 6000,   // косметический ремонт
+            capital: 9500,    // капитальный ремонт
+            full: 13000,      // комплексный под ключ
+            premium: 20000    // премиальный
+        };
+
+        // Надбавки за дополнительные опции (руб./м²)
+        const optionAddons = {
+            facade: 1500,
+            roof: 2000,
+            engineering: 2500
+        };
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const area = parseFloat(document.getElementById('area').value || '0');
+            const repairType = document.getElementById('repairType').value;
+            const materials = document.getElementById('materials').value;
+            const facade = document.getElementById('facade').checked;
+            const roof = document.getElementById('roof').checked;
+            const engineering = document.getElementById('engineering').checked;
+
+            if (!area || area <= 0 || !baseRates[repairType]) {
+                resultBlock.innerHTML = '<p class="calculator__error">Укажите корректную площадь и тип ремонта.</p>';
+                return;
+            }
+
+            let rate = baseRates[repairType];
+            if (facade) rate += optionAddons.facade;
+            if (roof) rate += optionAddons.roof;
+            if (engineering) rate += optionAddons.engineering;
+
+            const workCost = area * rate;
+
+            // Коэффициент для материалов (приближённо, по рынку 2,5–3х от стоимости работ)
+            const materialsCoeff = (materials === 'company') ? 2.7 : 1;
+            const totalCost = workCost * materialsCoeff;
+
+            const format = (value) =>
+                value.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
+
+            resultBlock.innerHTML = `
+                <h3 class="calculator__result-title">Ориентировочный расчёт</h3>
+                <p class="calculator__result-item">Стоимость работ: <strong>${format(workCost)} ₽</strong></p>
+                ${materials === 'company'
+                    ? `<p class="calculator__result-item">Оценочный бюджет с материалами: <strong>${format(totalCost)} ₽</strong></p>`
+                    : `<p class="calculator__result-item">При заказе материалов у нас ориентировочный бюджет составит <strong>${format(workCost * 2.7)} ₽</strong></p>`
+                }
+                <p class="calculator__result-note"><small>Расчёт предварительный и не является публичной офертой. Точная стоимость рассчитывается после выезда инженера-сметчика на объект.</small></p>
+            `;
+        });
+    }
 });
-
-

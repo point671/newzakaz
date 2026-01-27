@@ -1631,9 +1631,12 @@ text-align: left;
 
 /* ... existing code ... */
 
-/* Hide original */
+/* Show select and ensure it's above the arrow */
 .calculator__select {
-    display: none;
+    display: block;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
 }
 
 /* Options / Checkboxes */
