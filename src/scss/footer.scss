@@ -29,13 +29,16 @@ $footer-radius: 60px;
         &::before {
             content: "";
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px; // Only cover top portion where gradient is visible
             padding: 1px;
             border-radius: inherit;
             background: linear-gradient(
                 to bottom,
                 rgba(255, 255, 255, 0.5) 0%,
-                rgba(255, 255, 255, 0) 70px
+                rgba(255, 255, 255, 0) 100%
             );
             -webkit-mask: 
                 linear-gradient(#fff 0 0) content-box, 
@@ -282,7 +285,9 @@ text-align: left;
     
     // Tablet (Landscape/Portrait)
     @media (max-width: $tablet) {
-        border-radius: rem(40) rem(40) 0 0;
+        &__body {
+            border-radius: rem(40) rem(40) 0 0;
+        }
         
         &__top {
             display: grid;
@@ -314,8 +319,10 @@ text-align: left;
     
     // Mobile
     @media (max-width: $mobileSmall) {
-        border-radius: rem(30) rem(30) 0 0;
-        padding: rem(30) 0;
+        &__body {
+            border-radius: rem(30) rem(30) 0 0;
+            padding: rem(30) 0;
+        }
         
         &__top {
             grid-template-columns: 1fr;
