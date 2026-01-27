@@ -82,6 +82,12 @@
             justify-content: space-between;
             width: 100%;
             margin-bottom: rem(30);
+
+            @media (max-width: 600px) {
+                flex-direction: column;
+                align-items: center; // Center items
+                gap: rem(20);
+            }
         }
 
         .who-answer__logo {
@@ -101,6 +107,11 @@
 
            @media (max-width: 1200px) {
                margin-bottom: 0; 
+           }
+
+           @media (max-width: 600px) {
+               transform: none;
+               width: auto; // Allow to fit content if needed
            }
 
            // Avoid clipping in the intermediate state (900px - 1050px)
@@ -149,6 +160,12 @@
         
         @media (max-width: 900px) {
             min-height: auto;
+            height: auto;
+            justify-content: flex-start; // Start from top on mobile
+        }
+
+        @media (max-width: 600px) {
+            padding: rem(25);
         }
     }
 
