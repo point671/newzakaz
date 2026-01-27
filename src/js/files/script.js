@@ -169,13 +169,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 value.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
 
             resultBlock.innerHTML = `
-                <h3 class="calculator__result-title">Ориентировочный расчёт</h3>
-                <p class="calculator__result-item">Стоимость работ: <strong>${format(workCost)} ₽</strong></p>
+                <h3>Ориентировочный расчёт</h3>
+                <p>Стоимость работ: <strong>${format(workCost)} ₽</strong></p>
                 ${materials === 'company'
-                    ? `<p class="calculator__result-item">Оценочный бюджет с материалами: <strong>${format(totalCost)} ₽</strong></p>`
-                    : `<p class="calculator__result-item">При заказе материалов у нас ориентировочный бюджет составит <strong>${format(workCost * 2.7)} ₽</strong></p>`
+                    ? `<p>Оценочный бюджет с материалами: <strong>${format(totalCost)} ₽</strong></p>`
+                    : `<p class="calculator__result-estimate">При заказе материалов у нас ориентировочный бюджет составит <strong>${format(workCost * 2.7)} ₽</strong></p>`
                 }
-                <p class="calculator__result-note"><small>Расчёт предварительный и не является публичной офертой. Точная стоимость рассчитывается после выезда инженера-сметчика на объект.</small></p>
+                <p><small>Расчёт предварительный и не является публичной офертой. Точная стоимость рассчитывается после выезда инженера-сметчика на объект.</small></p>
             `;
         });
     }
