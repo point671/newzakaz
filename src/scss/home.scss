@@ -161,7 +161,7 @@ body {
 /* Prices Section */
 .prices {
     width: 100%;
-    padding: 100px 0;
+    padding: 100px 0 50px;
     color: #fff;
     /* Dark background from Pixso */
     background-color: #292D32; 
@@ -378,7 +378,10 @@ body {
     height: 70px;
     padding: 0 50px;
     border-radius: 35px;
-    background-color: #6d0a12;
+    border: 1px solid transparent;
+    background: linear-gradient(#670009, #670009) padding-box,
+                linear-gradient(to bottom, #B58287, #802B32) border-box;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.25);
     color: rgba(255, 255, 255, 1);
     font-family: Involve;
     font-style: normal;
@@ -390,13 +393,16 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     margin-top: 20px;
+    margin-bottom: 138px;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
 .prices__btn:hover {
-    background-color: #8a0d17;
+    background: linear-gradient(#7a0110, #7a0110) padding-box,
+                linear-gradient(to bottom, #C9A0A5, #903B42) border-box;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* Spoiler Trigger */
@@ -446,7 +452,7 @@ body {
     flex-direction: column;
     /* align-items: flex-start; Removed to allow full width */
     gap: 30px;
-    margin: 60px 0;
+    margin: 0px 0px;
     width: 100%;
 }
 
@@ -1363,7 +1369,10 @@ text-align: left;
 }
 
 .btn--primary {
-    background-color: var(--primary-color);
+    border: 1px solid transparent;
+    background: linear-gradient(#670009, #670009) padding-box,
+                linear-gradient(to bottom, #B58287, #802B32) border-box;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.25);
     color: #fff;
     font-family: Involve;
     font-style: Regular;
@@ -1372,12 +1381,14 @@ text-align: left;
     line-height: 29px;
     text-align: left;
     letter-spacing: 0%;
+    cursor: pointer;
 }
 
 .btn--primary:hover {
-    background-color: #8a121b;
+    background: linear-gradient(#7a0110, #7a0110) padding-box,
+                linear-gradient(to bottom, #C9A0A5, #903B42) border-box;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(109, 10, 18, 0.5);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* Calculator Section */
@@ -1743,31 +1754,29 @@ text-align: left;
 .calculator__btn {
     width: 100%;
     height: 70px;
-
-
     border-radius: 35px;
-    background-color: #6d0a12;
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border: none;
-    transition: all 0.3s ease;
-    margin-top: 53px; /* 30px gap + 53px margin = 83px */
-    text-align: center;
+    border: 1px solid transparent;
+    background: linear-gradient(#670009, #670009) padding-box,
+                linear-gradient(to bottom, #B58287, #802B32) border-box;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.25);
     color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    text-align: center;
     font-family: Involve;
     font-style: Regular;
     font-size: 24px;
     font-weight: 400;
     line-height: 29px;
     letter-spacing: 0%;
-    text-align: center;
 }
 
 .calculator__btn:hover {
-    background-color: #85101a;
-    box-shadow: 0 15px 30px rgba(109, 10, 18, 0.4);
+    background: linear-gradient(#7a0110, #7a0110) padding-box,
+                linear-gradient(to bottom, #C9A0A5, #903B42) border-box;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* Responsive */
@@ -2087,7 +2096,6 @@ text-align: left;
        ============================================ */
     .repair-types__header,
     .prices__header,
-    .projects__container,
     .calculator__header {
         margin-bottom: 30px;
     }
@@ -2104,6 +2112,11 @@ text-align: left;
     .prices__detail-row {
         padding: 15px;
         border-radius: 15px;
+    }
+
+    .prices__table-wrapper {
+        margin-bottom: 30px;
+        padding-bottom: 10px;
     }
 
     /* ============================================
@@ -2141,5 +2154,48 @@ text-align: left;
     .prices__footer,
     .projects__footer {
         margin-top: 30px;
+    }
+
+    /* ============================================
+       MARGIN OVERRIDES - Уменьшение отступов
+       ============================================ */
+    /* Grid margins (было 60-76px → 30px) */
+    .repair-types__grid,
+    .projects__grid {
+        margin-bottom: 30px;
+    }
+
+    /* Title margins (было 74px → 30px) */
+    .projects__title,
+    .calculator__header {
+        margin-bottom: 30px;
+    }
+
+    /* Mid-content margins (было 60px → 30px) */
+    .prices__mid-content,
+    .prices__detail-wrapper {
+        margin: 30px 0;
+    }
+
+    /* Footer text margins */
+    .projects__footer-text,
+    .projects__locations,
+    .projects__note {
+        margin-bottom: 20px;
+    }
+
+    /* Spoiler trigger padding */
+    .prices__spoiler-trigger {
+        padding: 10px 40px 10px 0;
+    }
+
+    /* Prices button mobile margins (было 138px → 30px) */
+    .prices__btn {
+        margin-bottom: 30px;
+    }
+
+    /* Prices section - уменьшение отступа снизу */
+    .prices {
+        padding-bottom: 30px;
     }
 }
