@@ -100,3 +100,54 @@
         line-height: 120%; 
     }
 }
+
+/* ============================================
+   UNIFIED MOBILE STYLES - benefits
+   ============================================ */
+@media (max-width: 768px) {
+    .benefits {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        
+        &__header {
+            margin-bottom: 30px;
+        }
+        
+        &__title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        &__subtitle {
+            font-size: 22px;
+        }
+        
+        &__grid {
+            gap: 15px;
+        }
+    }
+    
+    .benefit-card {
+        gap: 15px;
+        
+        &__icon {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            font-size: 18px;
+        }
+        
+        &__content {
+            gap: 8px;
+        }
+        
+        &__title {
+            font-size: 18px;
+        }
+        
+        &__text {
+            font-size: 16px;
+            line-height: 140%;
+        }
+    }
+}

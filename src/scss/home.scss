@@ -1963,3 +1963,183 @@ text-align: left;
         }
     }
 }
+
+/* ============================================================
+   UNIFIED MOBILE STYLES (max-width: 768px)
+   Единые стандарты для мобильной версии
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* ============================================
+       SECTION PADDING - Единые отступы секций
+       ============================================ */
+    .repair-types,
+    .prices,
+    .projects,
+    .calculator-wrapper .calculator,
+    .main-reviews {
+        padding: 50px 0;
+    }
+
+    /* ============================================
+       TYPOGRAPHY - Единая типографика
+       ============================================ */
+    
+    /* Section Titles (h2) - 28px */
+    .repair-types__title,
+    .prices__title,
+    .projects__title,
+    .calculator__title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    /* Section Subtitles (h3) - 22px */
+    .prices__subtitle,
+    .projects__subtitle,
+    .projects__footer-text,
+    .prices__spoiler-trigger,
+    .prices__detail-title {
+        font-size: 22px;
+    }
+
+    /* Card Titles - 18px */
+    .repair-card__title,
+    .project-card__title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    /* Body Text - 16px */
+    .repair-card__desc,
+    .repair-card__subdesc,
+    .project-card__desc,
+    .prices__top-text,
+    .prices__mid-text,
+    .prices__footer-text,
+    .projects__description,
+    .projects__locations,
+    .projects__note,
+    .repair-types__note {
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+    /* Small Text - 14px */
+    .prices__note,
+    .prices__detail-note {
+        font-size: 14px;
+    }
+
+    /* ============================================
+       GRIDS - Единая сетка (1 колонка)
+       ============================================ */
+    .repair-types__grid,
+    .projects__grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* ============================================
+       CARDS - Единый стиль карточек
+       ============================================ */
+    .repair-card,
+    .project-card {
+        border-radius: 20px;
+        min-height: auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .repair-card__content,
+    .project-card__content {
+        padding: 20px;
+    }
+
+    .repair-card__image-wrapper,
+    .project-card__image-wrapper {
+        height: 200px;
+    }
+
+    .repair-card__image,
+    .project-card__image {
+        border-radius: 20px;
+    }
+
+    /* ============================================
+       BUTTONS - Единый стиль кнопок
+       ============================================ */
+    .prices__btn,
+    .btn,
+    .btn--primary,
+    .calculator__btn {
+        height: 50px;
+        padding: 0 30px;
+        font-size: 18px;
+        border-radius: 25px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ============================================
+       HEADERS - Единые отступы заголовков
+       ============================================ */
+    .repair-types__header,
+    .prices__header,
+    .projects__container,
+    .calculator__header {
+        margin-bottom: 30px;
+    }
+
+    /* ============================================
+       TABLES - Компактные таблицы-карточки
+       ============================================ */
+    .prices__table,
+    .prices__detail-table {
+        gap: 12px;
+    }
+
+    .prices__row,
+    .prices__detail-row {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    /* ============================================
+       CALCULATOR - Адаптация калькулятора
+       ============================================ */
+    .calculator {
+        border-radius: 30px;
+    }
+
+    .calculator__form-wrapper {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .calculator__input,
+    .calculator__select,
+    .select-selected {
+        height: 50px;
+        font-size: 16px;
+        border-radius: 25px;
+    }
+
+    .calculator__checkboxes {
+        gap: 15px;
+    }
+
+    .custom-checkbox {
+        font-size: 14px;
+    }
+
+    /* ============================================
+       FOOTER SPACING - Отступы футера секций
+       ============================================ */
+    .repair-types__footer,
+    .prices__footer,
+    .projects__footer {
+        margin-top: 30px;
+    }
+}
